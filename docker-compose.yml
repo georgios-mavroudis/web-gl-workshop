@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  graph:
+    build: .
+    container_name: graph
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
