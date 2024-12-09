@@ -132,10 +132,8 @@ const vertexShaderSource = `
     // invert the y axis coordinates so 
     vec2 reversedYPos = vec2(scaledPos.x, u_resolution.y - scaledPos.y);
     
-    // zoom
-    vec2 zoom = reversedYPos * u_zoom;
-    // pan
-    vec2 zoomAndPan = zoom + u_pan;
+    // zoom and pan
+    vec2 zoomAndPan = reversedYPos * u_zoom + u_pan;
     
     // convert the positions from pixels to the range [0.0, 1.0]
     vec2 zeroToOne = zoomAndPan / u_resolution;

@@ -79,7 +79,6 @@ export const WebGLGraph: FC = () => {
 
         const zoomFactor = Math.exp(-e.deltaY * ZOOM_SENSITIVITY);
         const newScale = scale * zoomFactor;
-
         const panOffset = mouseMove + scaledCursor * (1 - zoomFactor) * scale;
 
         const { zoomUniformLocation, panUniformLocation } = attributes;
@@ -115,9 +114,7 @@ export const WebGLGraph: FC = () => {
             onWheel(e);
           }}
           onMouseMove={(e) => {
-            setMouseMove((prev) => {
-              return isDragging ? prev + e.movementX : prev;
-            });
+            setMouseMove((prev) => (isDragging ? prev + e.movementX : prev));
           }}
           style={{
             width: WIDTH,
