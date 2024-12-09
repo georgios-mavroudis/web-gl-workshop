@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DataProvider } from "./contexts/data-context";
 import { PlotProvider } from "./contexts/plot-context";
 import { SvgGraph } from "./graphs/svg-graph";
+import { WebGLGraph } from "./graphs/web-gl-graph";
 
 function App() {
   return (
@@ -9,8 +10,8 @@ function App() {
       <DataProvider>
         <PlotProvider>
           <Routes>
-            <Route path={"/"} index element={<SvgGraph />} />
-            {/* <Route path={RoutePaths.Analysis} element={<Analysis />} /> */}
+            <Route path={"/svg"} index element={<SvgGraph />} />
+            <Route path={"/"} element={<WebGLGraph />} />
           </Routes>
         </PlotProvider>
       </DataProvider>

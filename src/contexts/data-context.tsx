@@ -7,7 +7,7 @@ import {
 } from "react";
 import { MAX_X_POINT, MAX_Y_POINT } from "../constants";
 
-type Datum = {
+export type Datum = {
   x: number;
   y: number;
 };
