@@ -11,7 +11,8 @@ export const SvgGraph: FC = () => {
 
   return (
     <>
-      <button onClick={() => navigate("/")}>WebGL</button>
+      <h1>SVG</h1>
+      <button onClick={() => navigate("/")}>Go to WebGL</button>
       <GraphContainer>
         {data.map(({ x, y }, i) => {
           return (
